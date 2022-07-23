@@ -1,4 +1,6 @@
 <resources>
     <string name="app_name">AndroidEssentials</string>
     <string name="feature_intents">Launch FeatureIntents</string>
+    <string name="launch">Launch</string>
+    <string name="feature_intents_launched">Activity was launched from another intent! Here your parameters:</string>
 </resources>

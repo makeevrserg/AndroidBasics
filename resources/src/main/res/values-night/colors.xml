@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#FF202020</color>
+    <color name="colorPrimaryVariant">#FF101010</color>
+    <color name="colorSecondary">#2196F3</color>
+    <color name="colorSecondaryVariant">#FF9800</color>
+    <color name="colorOnSecondary">#FFFFFFFF</color>
+    <color name="colorOnPrimary">#FFFFFFFF</color>
+</resources>
