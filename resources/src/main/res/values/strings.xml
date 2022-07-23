@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">AndroidEssentials</string>
     <string name="feature_intents">Launch FeatureIntents</string>
+    <string name="recycler_view">Recycler view</string>
     <string name="launch">Launch</string>
     <string name="select_image">Select image</string>
     <string name="open_url">Open AstraInteractiver.ru</string>

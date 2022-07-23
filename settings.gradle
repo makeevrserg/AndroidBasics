@@ -10,3 +10,5 @@ rootProject.name = "AndroidEssentials"
 include ':app'
 include ':resources'
 include ':feature_intents'
+include ':feature_recycler_view'
+include ':domain'

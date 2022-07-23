@@ -11,7 +11,22 @@ buildscript {
         // in the individual module build.gradle files
     }
 }
+ext {
+    constraintLayout = '1.1.3'
 
+    androidxCore = '1.2.0'
+    androidxAppCompat = '1.1.0'
+    androidxRecycler = '1.1.0'
+    materialDesign = '1.1.0'
+
+    coroutines = '1.6.1'
+    lifecycle = '2.5.0'
+    lifecycle_ext = '2.2.0'
+    ROOM_VERSION = '1.1.1'
+    hilt_viewmodels = '1.0.0-alpha03'
+
+    navigation = "2.3.0-alpha01"
+}
 task clean(type: Delete) {
     delete rootProject.buildDir
 }

@@ -25,4 +25,12 @@
         android:text="@string/feature_intents"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
 
+    <Button
+        android:id="@+id/buttonLaunchRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#145563"
+        android:text="@string/recycler_view"
+        app:layout_constraintTop_toBottomOf="@+id/buttonLaunchFeaturesIntents" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

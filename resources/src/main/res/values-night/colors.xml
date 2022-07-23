@@ -6,4 +6,5 @@
     <color name="colorSecondaryVariant">#FF9800</color>
     <color name="colorOnSecondary">#FFFFFFFF</color>
     <color name="colorOnPrimary">#FFFFFFFF</color>
+    <color name="colorHint">#959595</color>
 </resources>
