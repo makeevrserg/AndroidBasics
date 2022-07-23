@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AndroidEssentials">
         <activity
+            android:name=".ImagePickerActivity"
+            android:exported="false" />
+        <activity
             android:name=".FeatureIntentsMainActivity"
             android:exported="true">
             <intent-filter>

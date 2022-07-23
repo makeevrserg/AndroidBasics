@@ -2,7 +2,9 @@
     <string name="app_name">AndroidEssentials</string>
     <string name="feature_intents">Launch FeatureIntents</string>
     <string name="launch">Launch</string>
+    <string name="select_image">Select image</string>
     <string name="open_url">Open AstraInteractiver.ru</string>
+    <string name="image_picker">Image picker activity</string>
     <string name="no_browser_activity">Not found browser application</string>
     <string name="feature_intents_launched">Activity was launched from another intent! Here your parameters:</string>
 </resources>

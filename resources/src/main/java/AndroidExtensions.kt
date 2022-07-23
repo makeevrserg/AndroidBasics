@@ -9,4 +9,9 @@ object AndroidExtensions {
 
     inline fun Context.launchActivity(action: String, uri: Uri, block: Intent.() -> Unit = {}) =
         Intent(action, uri).apply(block).also(::startActivity)
+
+    inline fun AppCompatActivity.launchActivityForResult(action: String,code:Int, block: Intent.() -> Unit = {}) =
+        Intent(action).apply(block).also{
+            startActivityForResult(it,code)
+        }
 }

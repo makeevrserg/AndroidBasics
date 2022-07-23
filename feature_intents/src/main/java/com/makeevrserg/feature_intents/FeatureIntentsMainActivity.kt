@@ -30,6 +30,9 @@ class FeatureIntentsMainActivity :
                 this.putExtra(TITLE_EXTRA, UUID.randomUUID().toString())
             }
         }
+        binding.bLaunchImagePicker.setOnClickListener {
+            launchActivity<ImagePickerActivity>()
+        }
         extraTitle?.let {
             binding.bLaunchActivity.visibility = View.GONE
             binding.tvTitle.text = getString(R.string.feature_intents_launched)

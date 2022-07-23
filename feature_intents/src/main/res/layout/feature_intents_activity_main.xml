@@ -49,6 +49,13 @@
             android:background="@color/colorSecondary"
             android:text="@string/open_url"
             android:textSize="14sp" />
+        <Button
+            android:id="@+id/bLaunchImagePicker"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorSecondary"
+            android:text="@string/image_picker"
+            android:textSize="14sp" />
     </LinearLayout>
 
 
