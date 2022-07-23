@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AndroidEssentials">
         <activity
-            android:name=".FeatureIntentsActivityMainActivity"
+            android:name=".FeatureIntentsMainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

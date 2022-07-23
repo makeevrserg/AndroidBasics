@@ -1,14 +1,12 @@
 package com.makeevrserg.androidessentials
 
 import AndroidExtensions.launchActivity
-import android.content.Context
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.LayoutInflater
 import androidx.viewbinding.ViewBinding
 import com.makeevrserg.androidessentials.databinding.ActivityMainBinding
-import com.makeevrserg.feature_intents.FeatureIntentsActivityMainActivity
+import com.makeevrserg.feature_intents.FeatureIntentsMainActivity
 
 abstract class BaseActivity<T : ViewBinding>(private val bindingFactory: (LayoutInflater) -> T) :
     AppCompatActivity() {
@@ -35,7 +33,7 @@ class MainActivity : BaseActivity<ActivityMainBinding>(ActivityMainBinding::infl
 
     override fun setupObservables(binding: ActivityMainBinding) {
         binding.buttonLaunchFeaturesIntents.setOnClickListener {
-            launchActivity<FeatureIntentsActivityMainActivity>()
+            launchActivity<FeatureIntentsMainActivity>()
         }
 
     }
