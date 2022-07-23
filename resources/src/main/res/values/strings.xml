@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">AndroidEssentials</string>
+    <string name="feature_intents">Launch FeatureIntents</string>
+</resources>
