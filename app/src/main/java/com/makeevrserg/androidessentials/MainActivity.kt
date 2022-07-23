@@ -10,7 +10,8 @@ import com.makeevrserg.androidessentials.databinding.ActivityMainBinding
 import com.makeevrserg.feature_intents.FeatureIntentsMainActivity
 
 class MainActivity : BaseActivity<ActivityMainBinding>(ActivityMainBinding::inflate) {
-
+    override val toolBarTitle: String
+        get() = getString(R.string.app_name)
     override fun setupObservables(binding: ActivityMainBinding) {
         binding.buttonLaunchFeaturesIntents.setOnClickListener {
             launchActivity<FeatureIntentsMainActivity>()

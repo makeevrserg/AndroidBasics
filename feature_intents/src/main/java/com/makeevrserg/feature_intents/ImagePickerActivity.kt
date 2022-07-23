@@ -15,6 +15,7 @@ class ImagePickerActivity :
     companion object {
         const val GET_IMAGE_CODE = 1
     }
+    override val toolBarTitle = "Image Picker"
     val pickImageActivityResult = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) {
         if (it.resultCode != Activity.RESULT_OK) return@registerForActivityResult
         it?.data?.data?.let { binding?.ivImage?.setImageURI(it) }
@@ -32,6 +33,7 @@ class ImagePickerActivity :
             })
         }
     }
+
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)

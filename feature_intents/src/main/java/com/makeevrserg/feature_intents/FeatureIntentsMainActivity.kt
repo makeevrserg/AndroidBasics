@@ -16,6 +16,7 @@ import java.util.*
 class FeatureIntentsMainActivity :
     BaseActivity<FeatureIntentsActivityMainBinding>(FeatureIntentsActivityMainBinding::inflate) {
     private var extraTitle: String? = null
+    override val toolBarTitle = "Feature Intents"
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         intent?.let {
