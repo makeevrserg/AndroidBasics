@@ -33,4 +33,12 @@
         android:text="@string/recycler_view"
         app:layout_constraintTop_toBottomOf="@+id/buttonLaunchFeaturesIntents" />
 
+    <Button
+        android:id="@+id/buttonLaunchService"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#145563"
+        android:text="@string/service"
+        app:layout_constraintTop_toBottomOf="@+id/buttonLaunchRecyclerView" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
