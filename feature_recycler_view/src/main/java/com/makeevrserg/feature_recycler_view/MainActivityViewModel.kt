@@ -17,6 +17,23 @@ import kotlinx.coroutines.launch
 
 
 class MainActivityViewModel(application: Application) : BaseViewModel(application) {
+    fun loadNextPage() {
+        if (isLoading) return
+        isLoading = true
+        viewModelScope.launch {
+            println("Loading page $page")
+            val list = rickAndMortyDataSource.fetchCharacters(page++)?.results
+            if (list.isNullOrEmpty()) {
+                page--
+                isLoading = false
+                return@launch
+            }
+            _characters.value = characters.value.toMutableList().apply { addAll(list) }.distinctBy { it.id }
+            isLoading = false
+
+        }
+    }
+
     companion object {
         private const val TAG = "MainActivityViewModel"
     }
@@ -24,19 +41,23 @@ class MainActivityViewModel(application: Application) : BaseViewModel(applicatio
     private val _characters = MutableStateFlow<List<Character>>(emptyList())
     val characters: StateFlow<List<Character>>
         get() = _characters
+    private var page = 0
+    private var isLoading = false
 
     init {
-        viewModelScope.launch {
-            _characters.value = rickAndMortyDataSource.fetchCharacters()?.results ?: emptyList()
-        }
-
+        loadNextPage()
     }
 }
 
-val List<Character>.asHeader
-    get() = this.groupBy { it.species }.flatMap {
-        it.value.map<Character, AdapterItem> { AdapterItem.CharacterItem(it) }.toMutableList()
-            .apply {
-                add(0, AdapterItem.Header(it.key))
+val List<Character>.asHeader: List<AdapterItem>
+    get() {
+        val grouped = this.distinctBy { it.id }.groupBy { it.species }
+        return grouped.flatMap {(spec,list)->
+            mutableListOf<AdapterItem>().apply{
+                add(AdapterItem.Header(spec))
+                addAll(
+                    list.map(AdapterItem::CharacterItem)
+                )
             }
+        }
     }

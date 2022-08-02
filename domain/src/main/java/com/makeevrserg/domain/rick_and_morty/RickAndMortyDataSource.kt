@@ -10,7 +10,7 @@ import java.lang.Exception
 
 class RickAndMortyDataSource(private val api: RickAndMortAPI) {
 
-    suspend fun fetchCharacters() = catching(true) { api.fetchCharacters()?.await() }
+    suspend fun fetchCharacters(page:Int) = catching(true) { api.fetchCharacters(page)?.await() }
     suspend fun fetchCharacter(id: String) = catching(true) { api.fetchCharacter(id)?.await() }
 }
 
