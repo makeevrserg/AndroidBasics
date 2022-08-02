@@ -60,6 +60,7 @@ class HeaderAdapter : ListAdapter<AdapterItem, RecyclerView.ViewHolder>(DIFF_CAL
         }
 
         fun bind(item: AdapterItem.CharacterItem) {
+            binding.tvIndex.text = item.index.toString()
             val item = item.character
             Glide.with(binding.root.context).load(item.image).into(binding.ivImage)
             binding.tvFirstSeen.text = item.origin.name

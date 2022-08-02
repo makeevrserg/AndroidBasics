@@ -28,7 +28,8 @@ class MainActivityViewModel(application: Application) : BaseViewModel(applicatio
                 isLoading = false
                 return@launch
             }
-            _characters.value = characters.value.toMutableList().apply { addAll(list) }.distinctBy { it.id }
+            _characters.value =
+                characters.value.toMutableList().apply { addAll(list) }.distinctBy { it.id }
             isLoading = false
 
         }
@@ -52,11 +53,14 @@ class MainActivityViewModel(application: Application) : BaseViewModel(applicatio
 val List<Character>.asHeader: List<AdapterItem>
     get() {
         val grouped = this.distinctBy { it.id }.groupBy { it.species }
-        return grouped.flatMap {(spec,list)->
-            mutableListOf<AdapterItem>().apply{
+        var i = 0
+        return grouped.flatMap { (spec, list) ->
+            mutableListOf<AdapterItem>().apply {
                 add(AdapterItem.Header(spec))
                 addAll(
-                    list.map(AdapterItem::CharacterItem)
+                    list.map {
+                        AdapterItem.CharacterItem(i++, it)
+                    }
                 )
             }
         }

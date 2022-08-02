@@ -74,4 +74,13 @@
             android:textColor="@color/colorOnPrimary"
             tools:text="Rixty Minutes" />
     </LinearLayout>
+
+    <TextView
+        android:id="@+id/tvIndex"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/colorOnPrimary"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:text="0" />
 </androidx.constraintlayout.widget.ConstraintLayout>

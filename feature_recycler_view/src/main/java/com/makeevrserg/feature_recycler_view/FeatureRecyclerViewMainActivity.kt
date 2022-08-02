@@ -3,6 +3,7 @@ package com.makeevrserg.feature_recycler_view
 import BaseActivity
 import android.os.Bundle
 import androidx.lifecycle.lifecycleScope
+import com.makeevrserg.feature_recycler_view.adapter.easy_adapter.IEasyAdapter
 import com.makeevrserg.feature_recycler_view.adapter.header_adapter.EasyAdapterImpl
 import com.makeevrserg.feature_recycler_view.adapter.header_adapter.HeaderAdapter
 import com.makeevrserg.feature_recycler_view.databinding.ActivityMainRecyclerViewBinding
