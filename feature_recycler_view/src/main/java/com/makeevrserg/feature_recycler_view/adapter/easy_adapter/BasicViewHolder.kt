@@ -5,20 +5,12 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import androidx.viewbinding.ViewBinding
 
-data class BasicViewHolder<B : ViewBinding, T, V : T>(
-    val inflater: (LayoutInflater, ViewGroup, Boolean) -> B,
-    val bind: (B, V) -> Unit,
-    val clazz: Class<V>,
-    val viewType: Int
-) {
-    var viewHolder: RecyclerView.ViewHolder? = null
-        private set
+abstract class BasicViewHolder<B : ViewBinding, T, V : T>(val inflater: (LayoutInflater, ViewGroup, Boolean) -> B) {
 
-    fun createViewHolder(parent: ViewGroup): RecyclerView.ViewHolder {
-        val viewHolder = createBinding(parent, this)
-        this.viewHolder = viewHolder
-        return viewHolder
-    }
+    abstract val bind: (B, V) -> Unit
+    abstract val clazz: Class<V>
+    abstract val viewType: Int
+    fun createViewHolder(parent: ViewGroup): RecyclerView.ViewHolder = createBinding(parent, this)
 
 }
 
@@ -28,14 +20,13 @@ interface UniqueViewHolder<T> {
 }
 
 private fun <B : ViewBinding, T, V : T> createBinding(
-    parent: ViewGroup,
-    viewHolderInfo: BasicViewHolder<B, T, V>
+    parent: ViewGroup, basicViewHolder: BasicViewHolder<B, T, V>
 ): RecyclerView.ViewHolder {
     val layoutInflater = LayoutInflater.from(parent.context)
-    val inflater = viewHolderInfo.inflater(layoutInflater, parent, false)
+    val inflater = basicViewHolder.inflater(layoutInflater, parent, false)
     return object : RecyclerView.ViewHolder(inflater.root), UniqueViewHolder<V> {
-        override val viewType: Int = viewHolderInfo.viewType
-        override fun bind(item: V) = viewHolderInfo.bind(inflater, item)
+        override val viewType: Int = basicViewHolder.viewType
+        override fun bind(item: V) = basicViewHolder.bind(inflater, item)
     }
 }
 
